@@ -17,8 +17,7 @@ app.use(helmet());
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
-URL =
-  "mongodb+srv://Abhi9495:Abhi270901@atlascluster.kbdvcv1.mongodb.net/?retryWrites=true&w=majority";
+URL = process.env.MONGOURL;
 mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 console.log("connected to DB");
